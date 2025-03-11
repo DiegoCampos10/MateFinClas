@@ -1,0 +1,858 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/DiegoCampos10/MateFinClas/blob/main/01_Python.ipynb%22Optimizaci%C3%B3n%22\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "he9wOccqa0XE"
+      },
+      "source": [
+        "# **📌 Fundamentos de Python**\n",
+        "    \n",
+        "Este notebook presenta los fundamentos de Python, incluyendo:\n",
+        "\n",
+        "1. Variables y tipos de datos.\n",
+        "2. Operadores y estructuras de control.\n",
+        "3. Ciclos y funciones.\n",
+        "4. Ejercicio práctico: Cálculo del factorial de un número."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "F9EUjR2Va0XO"
+      },
+      "source": [
+        "## ¿Qué es Python?\n",
+        "    \n",
+        "Python es un lenguaje de programación de alto nivel, interpretado y de propósito general.\n",
+        "Es ampliamente utilizado en desarrollo web, análisis de datos, inteligencia artificial,\n",
+        "aprendizaje automático y muchas otras aplicaciones.\n",
+        "\n",
+        "### **¿Por qué usar Python?**\n",
+        "- Sintaxis sencilla y fácil de aprender.\n",
+        "- Gran comunidad y abundante documentación.\n",
+        "- Amplia gama de bibliotecas y frameworks.\n",
+        "- Compatible con múltiples plataformas.\n",
+        "\n",
+        "Python es especialmente útil en áreas científicas y matemáticas, lo que lo hace ideal para\n",
+        "trabajos de **optimización numérica**.\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "XSPiDNvEa0XQ"
+      },
+      "source": [
+        "## Configuración del Entorno\n",
+        "\n",
+        "Para escribir y ejecutar código en Python, puedes utilizar distintos entornos. A continuación, te explicamos cómo instalar Python y configurar un entorno adecuado.\n",
+        "\n",
+        "### **1. Instalación de Python**\n",
+        "Puedes descargar Python desde la página oficial: [Python.org](https://www.python.org/downloads/).\n",
+        "\n",
+        "Durante la instalación, asegúrate de marcar la opción **\"Add Python to PATH\"** para poder ejecutarlo desde la terminal.\n",
+        "\n",
+        "### **2. Opciones de Entorno para Ejecutar Python**\n",
+        "Existen varias opciones para programar en Python:\n",
+        "\n",
+        "#### **a) Jupyter Notebook**\n",
+        "- Instalación:  \n",
+        "  ```sh\n",
+        "  pip install notebook\n",
+        "  ```\n",
+        "- Para ejecutarlo, usa el comando:\n",
+        "  ```sh\n",
+        "  jupyter notebook\n",
+        "  ```\n",
+        "\n",
+        "#### **b) Google Colab (Recomendado)**\n",
+        "Google Colab es una plataforma gratuita basada en la nube para ejecutar Python en notebooks de Jupyter sin necesidad de instalación.  \n",
+        "Accede a ella desde: [Google Colab](https://colab.research.google.com/).\n",
+        "\n",
+        "#### **c) Visual Studio Code (VS Code)**\n",
+        "- Descarga desde: [VS Code](https://code.visualstudio.com/).\n",
+        "- Instala la extensión \"Python\" para una mejor experiencia.\n",
+        "- Puedes ejecutar scripts con el botón \"Run\" o desde la terminal con:\n",
+        "  ```sh\n",
+        "  python nombre_script.py\n",
+        "  ```\n",
+        "\n",
+        "Ahora que el entorno está listo, ¡vamos a programar en Python!\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "HX6M0pfPa0XT"
+      },
+      "source": [
+        "# **📌 Sintaxis y Estructuras Básicas en Python**\n",
+        "Python es un lenguaje de programación con una sintaxis simple y legible. Aquí veremos cómo funcionan las variables, operadores, estructuras de control y funciones en Python."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "aXZRBdxya0XV"
+      },
+      "source": [
+        "## 1️⃣ Variables y Tipos de Datos\n",
+        "En Python, las variables no necesitan ser declaradas con un tipo específico; el intérprete infiere el tipo automáticamente."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "14BnVWrBa0XW",
+        "outputId": "4df16e5f-0474-4981-a0fb-1e7062978876",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Nombre: Gerardo, Tipo: <class 'str'>\n",
+            "Edad: 47, Tipo: <class 'int'>\n",
+            "Altura: 1.76, Tipo: <class 'float'>\n",
+            "Es estudiante: False, Tipo: <class 'bool'>\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Declaración de variables\n",
+        "nombre        = \"Gerardo\"           # Tipo str (cadena de texto)\n",
+        "edad          = 47                  # Tipo int (entero)\n",
+        "altura        = 1.76                # Tipo float (decimal)\n",
+        "es_estudiante = False               # Tipo bool (booleano)\n",
+        "\n",
+        "# Imprimir los valores y tipos de datos\n",
+        "print(f\"Nombre: {nombre}, Tipo: {type(nombre)}\")\n",
+        "print(f\"Edad: {edad}, Tipo: {type(edad)}\")\n",
+        "print(f\"Altura: {altura}, Tipo: {type(altura)}\")\n",
+        "print(f\"Es estudiante: {es_estudiante}, Tipo: {type(es_estudiante)}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "jkpqW1ROa0XZ"
+      },
+      "source": [
+        "### 📌 Notas importantes sobre las variables en Python:\n",
+        "\n",
+        "1. No se usa ; al final de las líneas.\n",
+        "2. Python es sensible a mayúsculas y minúsculas (Edad y edad son diferentes).\n",
+        "3. Los nombres de variables deben comenzar con una letra o _ y no pueden contener espacios."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "XFbiDvKwa0Xa"
+      },
+      "source": [
+        "#### **Ejercicio:**\n",
+        "Escribe un programa que solicite al usuario su nombre, edad y altura e imprima la información formateada."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 4,
+      "metadata": {
+        "id": "NLA_OkYla0Xb",
+        "outputId": "2e4ced26-1e8c-4ca5-e122-93db39098ba3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Nombre: Diego, Tipo: <class 'str'>\n",
+            "Edad: 20, Tipo: <class 'int'>\n",
+            "Altura: 1.69, Tipo: <class 'float'>\n",
+            "Es estudiante: False, Tipo: <class 'bool'>\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Declaración de variables\n",
+        "nombre= \"Diego\"\n",
+        "edad= 20\n",
+        "altura= 1.69\n",
+        "\n",
+        "# Imprimir los valores y tipos de datos\n",
+        "print(f\"Nombre: {nombre}\")\n",
+        "print(f\"Edad: {edad}\")\n",
+        "print(f\"Altura: {altura}\")\n",
+        "print(f\"Es estudiante: {es_estudiante}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "9h2KILo5a0Xc"
+      },
+      "source": [
+        "## 2️⃣ Operadores en Python\n",
+        "Los operadores nos permiten realizar operaciones matemáticas y lógicas:"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4zyYALtma0Xd"
+      },
+      "source": [
+        "### 🔹 Operadores Aritméticos"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "FEDMreLga0Xd"
+      },
+      "outputs": [],
+      "source": [
+        "a = float(input(\"Ingresa un número: \"))\n",
+        "b = float(input(\"Ingresa otro número: \"))\n",
+        "\n",
+        "print(\"Suma:\", a + b)\n",
+        "print(\"Resta:\", a - b)\n",
+        "print(\"Multiplicación:\", a * b)\n",
+        "print(\"División:\", a / b)\n",
+        "print(\"División Entera:\", a // b)\n",
+        "print(\"Módulo (residuo):\", a % b)\n",
+        "print(\"Exponente:\", a ** b)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "OmMs-lkZa0Xe"
+      },
+      "source": [
+        "#### **Ejercicio:**\n",
+        "Solicita dos números al usuario y muestra el resultado de sumarlos, restarlos, multiplicarlos y dividirlos."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "metadata": {
+        "id": "j48j2qBCa0Xf",
+        "outputId": "794dc6cb-a8ff-400e-9c66-51810f8ee216",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingresa un número: 7\n",
+            "Ingresa otro número: 6\n",
+            "Suma: 13.0\n",
+            "Resta: 1.0\n",
+            "Multiplicación: 42.0\n",
+            "División: 1.1666666666666667\n"
+          ]
+        }
+      ],
+      "source": [
+        "a = float(input(\"Ingresa un número: \"))\n",
+        "b = float(input(\"Ingresa otro número: \"))\n",
+        "\n",
+        "print(\"Suma:\", a + b)\n",
+        "print(\"Resta:\", a - b)\n",
+        "print(\"Multiplicación:\", a * b)\n",
+        "print(\"División:\", a / b)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_BXxrZUFa0Xf"
+      },
+      "source": [
+        "### 🔹 Operadores de Comparación"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "VxGCQlDNa0Xg"
+      },
+      "outputs": [],
+      "source": [
+        "print(a > b)\n",
+        "print(a < b)\n",
+        "print(a == b)\n",
+        "print(a != b)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kOrRtTZ2a0Xh"
+      },
+      "source": [
+        "### 🔹 Operadores Lógicos"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "BEXLQCTha0Xh"
+      },
+      "outputs": [],
+      "source": [
+        "x = True\n",
+        "y = False\n",
+        "\n",
+        "print(x and y)\n",
+        "print(x or y)\n",
+        "print(not x)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "s-N_olX0a0Xi"
+      },
+      "source": [
+        "## 3️⃣ Estructuras de Control\n",
+        "Las estructuras de control nos permiten tomar decisiones y repetir acciones en función de ciertas condiciones.\n",
+        "\n",
+        "📌 Nota: Python no usa llaves {}, sino indentación para definir los bloques de código."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "agQpy1Lra0Xi"
+      },
+      "source": [
+        "### 🔹 Condicionales (if-elif-else)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "id": "ogzU5nrva0Xj",
+        "outputId": "3c108ec4-5dc0-4c3b-e01b-801f1f638063",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "El clima es agradable.\n"
+          ]
+        }
+      ],
+      "source": [
+        "temperatura = 22\n",
+        "\n",
+        "if temperatura > 30:\n",
+        "    print(\"Hace calor, usa ropa ligera.\")\n",
+        "elif temperatura >= 20:\n",
+        "    print(\"El clima es agradable.\")\n",
+        "else:\n",
+        "    print(\"Hace frío, abrígate.\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "fZVmqjOBa0Xj"
+      },
+      "source": [
+        "#### **Ejercicio:**\n",
+        "Escribe un programa que solicite un número y determine si es positivo, negativo o cero."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 11,
+      "metadata": {
+        "id": "XeGtxPDSa0Xj",
+        "outputId": "0798df71-2aba-49b3-83af-d8c70cdbf768",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingresa un número: 15\n",
+            "El número es positivo.\n"
+          ]
+        }
+      ],
+      "source": [
+        "a = float(input(\"Ingresa un número: \"))\n",
+        "\n",
+        "if a > 0:\n",
+        "    print(\"El número es positivo.\")\n",
+        "elif a < 0:\n",
+        "    print(\"El número es negativo.\")\n",
+        "else:\n",
+        "    print(\"El número es cero.\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "PXkNahqIa0Xk"
+      },
+      "source": [
+        "## 4️⃣ Ciclos (for y while)\n",
+        "Los ciclos nos permiten repetir código varias veces."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "452-8syoa0Xk"
+      },
+      "source": [
+        "Ejemplo con **for**:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 13,
+      "metadata": {
+        "id": "NdaD-qWra0Xk",
+        "outputId": "aa777b2d-635c-477d-b257-9af4162c3951",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Iteración 1\n",
+            "Iteración 2\n",
+            "Iteración 3\n",
+            "Iteración 4\n",
+            "Iteración 5\n"
+          ]
+        }
+      ],
+      "source": [
+        "for i in range(1, 6):\n",
+        "    print(f\"Iteración {i}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "dTfi0_XDa0Xl"
+      },
+      "source": [
+        "Ejemplo con **while**:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 14,
+      "metadata": {
+        "id": "8F37Dpgza0Xl",
+        "outputId": "246346ba-d3a7-4d39-e522-fbf0ee2848bc",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Iteración 1\n",
+            "Iteración 2\n",
+            "Iteración 3\n",
+            "Iteración 4\n",
+            "Iteración 5\n"
+          ]
+        }
+      ],
+      "source": [
+        "contador = 1\n",
+        "while contador <= 5:\n",
+        "    print(f\"Iteración {contador}\")\n",
+        "    contador += 1"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Ymk82Woda0Xm"
+      },
+      "source": [
+        "#### **Ejercicio:**\n",
+        "Escribe un programa que imprima los números pares del 1 al 10 usando for y while."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 15,
+      "metadata": {
+        "id": "-GCXlCaDa0Xm",
+        "outputId": "c78ca98d-cb23-49be-db93-50b87f14af6a",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Iteracion 2\n",
+            "Iteracion 4\n",
+            "Iteracion 6\n",
+            "Iteracion 8\n",
+            "Iteracion 10\n",
+            "Iteracon 2\n",
+            "Iteracon 4\n",
+            "Iteracon 6\n",
+            "Iteracon 8\n",
+            "Iteracon 10\n"
+          ]
+        }
+      ],
+      "source": [
+        "for i in range(1, 11):\n",
+        "    if i % 2 == 0:\n",
+        "        print(f\"Iteracion {i}\")\n",
+        "\n",
+        "\n",
+        "contador = 1\n",
+        "while contador <= 10:\n",
+        "    if contador % 2 == 0:\n",
+        "        print(f\"Iteracon {contador}\")\n",
+        "    contador += 1"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "DsbgCcoKa0Xm"
+      },
+      "source": [
+        "## 5️⃣ Listas y Bucles\n",
+        "Una lista es una estructura que almacena múltiples elementos en un solo objeto."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 16,
+      "metadata": {
+        "id": "kWOIE2wHa0Xm",
+        "outputId": "81dad35f-20f0-4f42-e22e-9c65a56f9884",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Me gusta la Manzana\n",
+            "Me gusta la Banana\n",
+            "Me gusta la Cereza\n",
+            "Me gusta la Uva\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Crear una lista\n",
+        "frutas = [\"Manzana\", \"Banana\", \"Cereza\", \"Uva\"]\n",
+        "\n",
+        "# Recorrer la lista con un bucle\n",
+        "for fruta in frutas:\n",
+        "    print(f\"Me gusta la {fruta}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6p6b5_x2a0Xn"
+      },
+      "source": [
+        "#### **Ejercicio:**\n",
+        "Crea una lista con 5 nombres y usa un bucle for para imprimir cada nombre."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 17,
+      "metadata": {
+        "id": "AJcvZlIIa0Xn",
+        "outputId": "8fe74984-1ec2-4ddd-fffd-9095fb3544d5",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Está buena la Manzana\n",
+            "Está buena la Banana\n",
+            "Está buena la Cereza\n",
+            "Está buena la Uva\n",
+            "Está buena la Pera\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Crea una lista\n",
+        "frutas = [\"Manzana\", \"Banana\", \"Cereza\", \"Uva\", \"Pera\"]\n",
+        "\n",
+        "# Recorrer la lista con un bucle\n",
+        "for fruta in frutas:\n",
+        "    print(f\"Está buena la {fruta}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kqmXT9S7a0Xo"
+      },
+      "source": [
+        "## 6️⃣ Funciones en Python\n",
+        "Las funciones permiten estructurar el código en bloques reutilizables.\n",
+        "\n",
+        "#### 📌 Características de las funciones en Python:\n",
+        "\n",
+        "- Se definen con def nombre_funcion(parametros):\n",
+        "- Pueden devolver valores con return\n",
+        "- Los parámetros pueden ser opcionales"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 18,
+      "metadata": {
+        "id": "48ikfBZQa0Xo",
+        "outputId": "f1601ac9-021e-439a-9032-44f38d897e3d",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hola, Gerardo! Bienvenido a Python.\n"
+          ]
+        }
+      ],
+      "source": [
+        "def saludar(nombre):\n",
+        "    \"\"\"\n",
+        "        Función que recibe un nombre y muestra un saludo.\n",
+        "    \"\"\"\n",
+        "\n",
+        "    print(f\"Hola, {nombre}! Bienvenido a Python.\")\n",
+        "\n",
+        "saludar(\"Gerardo\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 19,
+      "metadata": {
+        "id": "3ggxz7zha0Xp",
+        "outputId": "4a529f87-bff4-4908-809d-85d279de2fd4",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "La suma de 4 y 5 es: 9\n",
+            "La suma de 4 y 5 es: 9\n"
+          ]
+        }
+      ],
+      "source": [
+        "def suma(a, b):\n",
+        "    \"\"\"\n",
+        "        Esta función suma dos números y retorna el resultado.\n",
+        "    \"\"\"\n",
+        "\n",
+        "    return a + b\n",
+        "\n",
+        "a = 4\n",
+        "b = 5\n",
+        "resultado = suma(4, 5)\n",
+        "print(\"La suma de\", a, \"y\", b, \"es:\", resultado)\n",
+        "print(\"La suma de\", a, \"y\", b, \"es:\", suma(a, b))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "io31TCQia0Xp"
+      },
+      "source": [
+        "#### **Ejercicio:**\n",
+        "Crea una función llamada es_par(n) que reciba un número y retorne **True** si es par, de lo contrario, **False**."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 34,
+      "metadata": {
+        "id": "HRw_h0I7a0Xq",
+        "outputId": "ce7e9985-c65f-4830-d6dd-cb064720d821",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingresa un número: 4\n",
+            "True\n",
+            "Ingresa un número: 3\n",
+            "False\n"
+          ]
+        }
+      ],
+      "source": [
+        "def es_par(n):\n",
+        "    \"\"\"\n",
+        "        Esta función recibe un numero y retorna True si es par, de lo contrario, False.\n",
+        "    \"\"\"\n",
+        "    n = float(input(\"Ingresa un número: \"))\n",
+        "    if n % 2 == 0:\n",
+        "        return True\n",
+        "    else:\n",
+        "        return False\n",
+        "\n",
+        "print(es_par(0))\n",
+        "print(es_par(1))"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "kYbEZ8ana0YK"
+      },
+      "source": [
+        "## **Ejercicio:**\n",
+        "\n",
+        "El factorial de un número n se calcula como:\n",
+        "\n",
+        "$$\n",
+        "    n! = n\\times(n-1)\\times(n-2)\\dots2\\times1\n",
+        "$$\n",
+        "\n",
+        "Escribe un código que:\n",
+        "1. Solicite al usuario ingresar un número.\n",
+        "2. Se envíe el número a una función __factorial__.\n",
+        "3. La función debe de calcular el factorial del número y retornarla.\n",
+        "4. Imprima el resultado."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 33,
+      "metadata": {
+        "id": "lxn1cC5aa0YL",
+        "outputId": "43f98ce5-ae04-43a6-d91a-652e606618a9",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingresa un número: 4\n",
+            "24.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "n = float(input(\"Ingresa un número: \"))\n",
+        "\n",
+        "def factorial(n):\n",
+        "    if n == 0:\n",
+        "        return 1\n",
+        "    else:\n",
+        "        return n * factorial(n-1)\n",
+        "\n",
+        "print(factorial(n))"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "base",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.9.13"
+    },
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
